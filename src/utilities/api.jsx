@@ -8,7 +8,7 @@ export const instance = axios.create({
     Authorization: getLocalStorage("token") ? getLocalStorage("token") : " ",
   },
 });
-console.log("token", instance.defaults.headers.Authorization);
+// console.log("token", instance.defaults.headers.Authorization);
 export const api = async (method = "", url = "", body = "") => {
   try {
     const response = await instance[method](url, body);

@@ -8,8 +8,8 @@ const Privateroute = () => {
     const checkuser = async () => {
       try {
         const result = await api("get", "/isauthenticated");
-        console.log("private route reuslt", result);
-        console.log(result.success);
+        // console.log("private route reuslt", result);
+        // console.log(result.success);
         if (result.success) setisloggedin(true);
         else setisloggedin(false);
       } catch (err) {

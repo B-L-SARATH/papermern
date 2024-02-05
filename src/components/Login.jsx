@@ -13,7 +13,7 @@ function Login() {
     console.log("form submited");
     const data = { email, password };
     const result = await api("post", "/login", data);
-    console.log(result);
+    // console.log(result);
 
     if (result.success) {
       saveLocalStorage("token", result.token);

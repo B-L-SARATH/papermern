@@ -41,49 +41,51 @@ function Home() {
   return (
     <>
       <Navbar />
-      <div className="container">
-        <table className="table border shadow">
-          <thead>
-            <tr>
-              <th scope="col">SNO</th>
-              <th scope="col">Title</th>
-              <th scope="col">Author</th>
-              <th scope="col">Year</th>
-              <th scope="col">Publisher</th>
-              <th scope="col">More</th>
-            </tr>
-          </thead>
-          <tbody>
-            {paperlist.map((item, index) => {
-              return (
-                <tr key={item._id}>
-                  <td scope="row">{index + 1}</td>
-                  <td>{item.title}</td>
-                  <td>{item.author}</td>
-                  <td>{item.year}</td>
-                  <td>{item.publisher}</td>
-                  <td>
-                    <Link
-                      to={`/editpaper/${item._id}`}
-                      className="btn btn-dark m-1"
-                    >
-                      {" "}
-                      Edit
-                    </Link>
-                    <button
-                      className="btn btn-danger m-1"
-                      onClick={() => {
-                        deletepaper(item._id);
-                      }}
-                    >
-                      Delete
-                    </button>
-                  </td>
-                </tr>
-              );
-            })}
-          </tbody>
-        </table>
+      <div className="container-md p-3">
+        <div className="table-responsive">
+          <table className="table border shadow">
+            <thead>
+              <tr>
+                <th scope="col">SNO</th>
+                <th scope="col">Title</th>
+                <th scope="col">Author</th>
+                <th scope="col">Year</th>
+                <th scope="col">Publisher</th>
+                <th scope="col">More</th>
+              </tr>
+            </thead>
+            <tbody>
+              {paperlist.map((item, index) => {
+                return (
+                  <tr key={item._id}>
+                    <td scope="row">{index + 1}</td>
+                    <td>{item.title}</td>
+                    <td>{item.author}</td>
+                    <td>{item.year}</td>
+                    <td>{item.publisher}</td>
+                    <td>
+                      <Link
+                        to={`/editpaper/${item._id}`}
+                        className="btn btn-dark m-1"
+                      >
+                        {" "}
+                        Edit
+                      </Link>
+                      <button
+                        className="btn btn-danger m-1"
+                        onClick={() => {
+                          deletepaper(item._id);
+                        }}
+                      >
+                        Delete
+                      </button>
+                    </td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+        </div>
       </div>
     </>
   );

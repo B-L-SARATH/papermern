@@ -59,11 +59,11 @@ function Signup() {
           required
         />
         <br />
-        <div className="d-flex gap-3">
+        <div className="d-flex flex-nowrap">
           <button type="submit" className="btn btn-dark mx-2">
             signup
           </button>
-          <Link to="/login" className="btn btn-dark mx-2">
+          <Link to="/login" className="btn btn-dark mx-2 ">
             Signin
           </Link>
         </div>
